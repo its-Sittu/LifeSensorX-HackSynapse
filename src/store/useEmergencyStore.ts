@@ -1,0 +1,90 @@
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
+export interface Contact {
+  id: string;
+  name: string;
+  phone: string;
+}
+
+export interface Hospital {
+  _id?: string;
+  name: string;
+  address: string;
+  location: {
+    lat: number;
+    lng: number;
+  };
+  phone?: string | null;
+  score?: number;
+  reason?: string;
+  isRecommended?: boolean;
+  distanceKm?: number | null;
+  beds?: {
+    total?: number;
+    occupied?: number;
+    available?: number;
+    icu?: { total?: number; occupied?: number; available?: number };
+    emergency?: { total?: number; occupied?: number; available?: number };
+  };
+  doctorsAvailable?: number;
+  emergencySupport?: boolean;
+}
+
+export interface LocationData {
+  latitude: number | null;
+  longitude: number | null;
+  error: string | null;
+}
+
+interface EmergencyState {
+  isEmergencyMode: boolean;
+  showEmergencyModal: boolean;
+  contacts: Contact[];
+  location: LocationData;
+  hospitals: Hospital[];
+  triggerEmergency: () => void;
+  cancelEmergency: () => void;
+  closeEmergencyModal: () => void;
+  addContact: (contact: Omit<Contact, 'id'>) => void;
+  removeContact: (id: string) => void;
+  setLocation: (loc: Partial<LocationData>) => void;
+  setHospitals: (hospitals: Hospital[]) => void;
+}
+
+export const useEmergencyStore = create<EmergencyState>()(
+  persist(
+    (set) => ({
+      isEmergencyMode: false,
+      showEmergencyModal: false,
+      contacts: [],
+      location: { latitude: null, longitude: null, error: null },
+      hospitals: [],
+
+      triggerEmergency: () => set({ isEmergencyMode: true, showEmergencyModal: true }),
+      cancelEmergency: () => set({ isEmergencyMode: false, showEmergencyModal: false, hospitals: [] }),
+      closeEmergencyModal: () => set({ showEmergencyModal: false }),
+
+      addContact: (contact) =>
+        set((state) => ({
+          contacts: [...state.contacts, { ...contact, id: crypto.randomUUID() }].slice(0, 5)
+        })),
+
+      removeContact: (id) =>
+        set((state) => ({
+          contacts: state.contacts.filter(c => c.id !== id)
+        })),
+
+      setLocation: (loc) =>
+        set((state) => ({
+          location: { ...state.location, ...loc }
+        })),
+
+      setHospitals: (hospitals) => set({ hospitals })
+    }),
+    {
+      name: 'lifesensorx-storage',
+      partialize: (state) => ({ contacts: state.contacts }), // Only persist contacts
+    }
+  )
+);
