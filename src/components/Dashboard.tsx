@@ -91,7 +91,8 @@ const Dashboard: React.FC = () => {
                 onClick={() => {
                   armAudio();
                 }}
-                className="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full font-medium hover:bg-emerald-500/30 transition-all border border-emerald-500/40 text-xs flex items-center gap-1.5 shadow-[0_0_10px_rgba(16,185,129,0.2)]"
+                aria-label="Arm audible siren audio"
+                className="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full font-medium hover:bg-emerald-500/30 transition-all border border-emerald-500/40 text-xs flex items-center gap-1.5 shadow-[0_0_10px_rgba(16,185,129,0.2)] cursor-pointer"
               >
                 <Volume2 size={14} />
                 Arm Siren Audio
@@ -103,7 +104,8 @@ const Dashboard: React.FC = () => {
                   armAudio();
                   triggerEmergency();
                 }}
-                className="px-4 py-2 bg-red-500/20 text-red-400 rounded-full font-medium hover:bg-red-500/30 transition-all border border-red-500/30 text-xs"
+                aria-label="Trigger manual emergency test"
+                className="px-4 py-2 bg-red-500/20 text-red-400 rounded-full font-medium hover:bg-red-500/30 transition-all border border-red-500/30 text-xs cursor-pointer"
               >
                 Test Emergency
               </motion.button>

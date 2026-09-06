@@ -18,6 +18,8 @@ const AlertPopup: React.FC<Props> = ({ isVisible, message, type = 'success', onC
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.9 }}
           className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[60] w-[90%] max-w-sm"
+          role="alert"
+          aria-live="polite"
         >
           <div className="glass-card p-4 flex items-center gap-3 bg-zinc-900/95 border border-zinc-700 shadow-2xl">
             {type === 'success' ? (
