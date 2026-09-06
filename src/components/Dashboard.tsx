@@ -85,24 +85,28 @@ const Dashboard: React.FC = () => {
             </div>
             
             <div className="flex items-center gap-2">
-              <button 
+              <motion.button 
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
                 onClick={() => {
                   armAudio();
                 }}
-                className="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full font-medium hover:bg-emerald-500/30 transition-all border border-emerald-500/40 text-xs flex items-center gap-1.5 active:scale-95 shadow-[0_0_10px_rgba(16,185,129,0.2)]"
+                className="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full font-medium hover:bg-emerald-500/30 transition-all border border-emerald-500/40 text-xs flex items-center gap-1.5 shadow-[0_0_10px_rgba(16,185,129,0.2)]"
               >
                 <Volume2 size={14} />
                 Arm Siren Audio
-              </button>
-              <button 
+              </motion.button>
+              <motion.button 
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
                 onClick={() => {
                   armAudio();
                   triggerEmergency();
                 }}
-                className="px-4 py-2 bg-red-500/20 text-red-400 rounded-full font-medium hover:bg-red-500/30 transition-all border border-red-500/30 text-xs active:scale-95"
+                className="px-4 py-2 bg-red-500/20 text-red-400 rounded-full font-medium hover:bg-red-500/30 transition-all border border-red-500/30 text-xs"
               >
                 Test Emergency
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -111,7 +115,11 @@ const Dashboard: React.FC = () => {
       {/* Sensor Status Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* ESP32 / MPU6500 IoT Hardware Status */}
-        <div className="glass-card p-4 flex items-center justify-between">
+        <motion.div 
+          whileHover={{ y: -2 }}
+          transition={{ duration: 0.2 }}
+          className="glass-card p-4 flex items-center justify-between"
+        >
           <div className="flex items-center gap-2 text-zinc-400">
             <Cpu size={16} className={isIotOnline ? "text-emerald-400" : "text-cyan-400"} />
             <span className="text-xs uppercase tracking-wider font-semibold">ESP32 Hardware</span>
@@ -121,10 +129,14 @@ const Dashboard: React.FC = () => {
               ? `${iotDevice?.deviceId || 'Online'} (${currentMagnitude}g)`
               : 'Standby / Ready'}
           </p>
-        </div>
+        </motion.div>
 
         {/* Emergency System Status */}
-        <div className="glass-card p-4 flex items-center justify-between">
+        <motion.div 
+          whileHover={{ y: -2 }}
+          transition={{ duration: 0.2 }}
+          className="glass-card p-4 flex items-center justify-between"
+        >
           <div className="flex items-center gap-2 text-zinc-400">
             <ShieldCheck size={16} className="text-emerald-400" />
             <span className="text-xs uppercase tracking-wider font-semibold">Automatic Dispatch</span>
@@ -132,7 +144,7 @@ const Dashboard: React.FC = () => {
           <p className="text-sm font-medium text-emerald-400 font-mono">
             Direct Siren & SMS Armed
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
