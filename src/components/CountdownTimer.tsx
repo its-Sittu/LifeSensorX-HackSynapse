@@ -33,11 +33,11 @@ const CountdownTimer: React.FC<Props> = ({ timeLeft, setTimeLeft, onComplete, is
   }, [isActive, setTimeLeft]);
 
   return (
-    <div className="flex flex-col items-center">
-      <p className="text-red-200 text-lg mb-8">
+    <div className="flex flex-col items-center" aria-live="assertive" role="timer">
+      <p className="text-red-200 text-lg mb-8 tracking-wide">
         Sending alert in {timeLeft}s
       </p>
-      <div className="text-8xl font-black text-white mb-12 drop-shadow-xl tabular-nums">
+      <div className="text-8xl font-black text-white mb-12 drop-shadow-[0_0_35px_rgba(239,68,68,0.5)] tabular-nums transition-transform duration-300">
         {timeLeft}
       </div>
     </div>
