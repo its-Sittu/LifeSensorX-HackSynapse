@@ -15,12 +15,19 @@
 
 @layer components {
   .glass-card {
-    @apply bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/50 rounded-3xl shadow-2xl;
+    @apply bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/50 rounded-3xl shadow-2xl transition-all duration-300;
+  }
+  .glass-panel {
+    @apply bg-zinc-950/60 backdrop-blur-2xl border border-zinc-800/40 rounded-2xl;
   }
 }
 
 /* Custom Scrollbar for a premium feel */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 4px;
   background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
 }
