@@ -1,5 +1,6 @@
 # 🚨 LifeSensorX — IoT Accident Detection & Smart Emergency Responder
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Online-00DC82?logo=vercel&logoColor=white&style=for-the-badge)](https://life-sensor-x.vercel.app/)
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?logo=vite&logoColor=white&style=for-the-badge)](https://vite.dev)
@@ -9,17 +10,21 @@
 [![WhatsApp Automation](https://img.shields.io/badge/WhatsApp-Free_Gateway-25D366?logo=whatsapp&logoColor=white&style=for-the-badge)](https://whatsapp.com)
 [![Twilio Voice](https://img.shields.io/badge/Twilio-AI_Voice_Calling-F22F46?logo=twilio&logoColor=white&style=for-the-badge)](https://twilio.com)
 
+> 🌐 **Live Production Deployment:** [https://life-sensor-x.vercel.app/](https://life-sensor-x.vercel.app/)
+
 ---
 
 ## 📖 Overview & Mission
 
 **LifeSensorX** is an intelligent, real-time IoT accident detection and emergency response ecosystem. It bridges the critical "Golden Hour" gap following vehicular accidents by detecting crashes instantly via wearable/vehicle sensors, filtering false positives with a 10-second fail-safe countdown, automatically dispatching high-precision GPS emergency alerts (WhatsApp & AI Voice Calls), and pre-triaging victims into the nearest trauma hospital's live emergency queue.
 
+Experience the live system: **[https://life-sensor-x.vercel.app/](https://life-sensor-x.vercel.app/)**
+
 ---
 
 ## 🖥️ Live Application Dashboard Preview
 
-Here is the actual interface of the **LifeSensorX** system in operation:
+Here is the actual interface of the **LifeSensorX** system in operation ([Live Demo](https://life-sensor-x.vercel.app/)):
 
 ![LifeSensorX Dashboard](public/dashboard.png)
 
