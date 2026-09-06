@@ -57,7 +57,8 @@ const ContactsManager: React.FC = () => {
               </div>
               <button 
                 onClick={() => removeContact(contact.id)}
-                className="p-2 text-zinc-500 hover:text-red-400 hover:bg-red-400/10 rounded-full transition-colors"
+                aria-label={`Remove contact ${contact.name}`}
+                className="p-2 text-zinc-500 hover:text-red-400 hover:bg-red-400/10 rounded-full transition-all active:scale-95 touch-manipulation cursor-pointer"
               >
                 <Trash2 size={16} />
               </button>
