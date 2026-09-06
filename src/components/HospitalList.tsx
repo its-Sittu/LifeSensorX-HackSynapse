@@ -127,11 +127,13 @@ const HospitalList: React.FC = () => {
                 key={hospital.name + index}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                className={`glass-card p-4 hover:bg-zinc-800/40 transition-all border ${
+                exit={{ opacity: 0, y: -10 }}
+                whileHover={{ scale: 1.01 }}
+                transition={{ delay: index * 0.04 }}
+                className={`glass-card p-4 hover:bg-zinc-800/50 transition-all border ${
                   isTopRecommended 
                     ? 'border-cyan-500/40 bg-gradient-to-br from-cyan-950/20 via-zinc-900/60 to-blue-950/20 shadow-[0_0_20px_rgba(6,182,212,0.15)]' 
-                    : 'border-zinc-800/50'
+                    : 'border-zinc-800/50 hover:border-zinc-700/80'
                 }`}
               >
                 <div className="flex flex-col gap-3">
