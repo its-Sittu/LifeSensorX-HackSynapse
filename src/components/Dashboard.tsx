@@ -65,7 +65,10 @@ const Dashboard: React.FC = () => {
         
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-2">
-            <div className={`w-3 h-3 rounded-full ${isIotOnline ? 'bg-emerald-400 animate-pulse' : 'bg-cyan-400 animate-pulse'}`} />
+            <div className="relative flex items-center justify-center">
+              <span className={`absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping ${isIotOnline ? 'bg-emerald-400' : 'bg-cyan-400'}`} />
+              <div className={`relative w-2.5 h-2.5 rounded-full ${isIotOnline ? 'bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]' : 'bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]'}`} />
+            </div>
             <span className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
               {isIotOnline ? 'ESP32 Hardware Connected' : 'IoT Crash Monitor Active'}
             </span>
@@ -79,9 +82,9 @@ const Dashboard: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-xs text-zinc-400 bg-zinc-900/60 px-3 py-1.5 rounded-full border border-zinc-800">
+            <div className="flex items-center gap-2 text-xs text-zinc-300 bg-zinc-900/80 px-3.5 py-1.5 rounded-full border border-zinc-700/60 shadow-inner">
               <Radio size={14} className={isIotOnline ? "text-emerald-400 animate-pulse" : "text-cyan-400"} />
-              <span>{isIotOnline ? `Device: ${iotDevice?.deviceId}` : 'Awaiting ESP32 Crash Signal'}</span>
+              <span className="font-mono">{isIotOnline ? `Device: ${iotDevice?.deviceId}` : 'Awaiting ESP32 Crash Signal'}</span>
             </div>
             
             <div className="flex items-center gap-2">
