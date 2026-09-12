@@ -10,15 +10,13 @@
 [![WhatsApp Automation](https://img.shields.io/badge/WhatsApp-Free_Gateway-25D366?logo=whatsapp&logoColor=white&style=for-the-badge)](https://whatsapp.com)
 [![Twilio Voice](https://img.shields.io/badge/Twilio-AI_Voice_Calling-F22F46?logo=twilio&logoColor=white&style=for-the-badge)](https://twilio.com)
 
-> 🌐 **Live Production Deployment:** [https://life-sensor-x.vercel.app/](https://life-sensor-x.vercel.app/)
+
 
 ---
 
 ## 📖 Overview & Mission
 
 **LifeSensorX** is an intelligent, real-time IoT accident detection and emergency response ecosystem. It bridges the critical "Golden Hour" gap following vehicular accidents by detecting crashes instantly via wearable/vehicle sensors, filtering false positives with a 10-second fail-safe countdown, automatically dispatching high-precision GPS emergency alerts (WhatsApp & AI Voice Calls), and pre-triaging victims into the nearest trauma hospital's live emergency queue.
-
-Experience the live system: **[https://life-sensor-x.vercel.app/](https://life-sensor-x.vercel.app/)**
 
 ---
 
